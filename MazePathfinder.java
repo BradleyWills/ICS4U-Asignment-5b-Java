@@ -22,11 +22,11 @@ public class MazePathfinder {
     int stX = 0;
     int stY = 0;
     int mazeWidth;
-    Scanner userInput = new Scanner(stYstem.in);
+    Scanner userInput = new Scanner(System.in);
     try {
-      stYstem.out.println("Type in the maze for a solved version.");
+      System.out.println("Type in the maze for a solved version.");
       String userMaze = userInput.nextLine();
-      stYstem.out.println("Type in the width of the maze.");
+      System.out.println("Type in the width of the maze.");
       // 6
       mazeWidth = userInput.nextInt();
       String[][] grid = new String[mazeWidth + 2][(userMaze.length() / mazeWidth) + 2];
@@ -45,7 +45,7 @@ public class MazePathfinder {
         }
       }
       if ((grid[stX][stY].equals("S")) == false) {
-        stYstem.out.println("Invalid Input. Make sure you have a starting point.");
+        System.out.println("Invalid Input. Make sure you have a starting point.");
         return;
       }
       while (finished == false) {
@@ -88,7 +88,7 @@ public class MazePathfinder {
           } else if (grid[stX - 1][stY].equals("+")) {
             stX--;
           } else {
-            stYstem.out.println("Invalid Input. There is no possible path.");
+            System.out.println("Invalid Input. There is no possible path.");
             return;
           }
         }
@@ -106,10 +106,10 @@ public class MazePathfinder {
         for (int a = 1; a <= mazeWidth; a++) {
           lineOfText += grid[a][b];
         }
-        stYstem.out.println(lineOfText);
+        System.out.println(lineOfText);
       }
     } catch (Exception e) {
-      stYstem.out.println("Invalid Input.");
+      System.out.println("Invalid Input.");
     }
   }
 }
